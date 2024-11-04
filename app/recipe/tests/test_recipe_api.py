@@ -29,7 +29,9 @@ def create_recipe(user, **params):
     }
     defaults.update(params)
 
-    return Recipe.objects.create(user=user, **defaults)
+    recipe = Recipe.objects.create(user=user, **defaults)
+
+    return recipe
 
 
 class PublicRecipeApiTests(TestCase):
